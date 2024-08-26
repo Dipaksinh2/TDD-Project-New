@@ -1,13 +1,30 @@
 package com.tdd.string;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-@SpringBootTest
+import com.tdd.string.Controller.MyController;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@SpringBootTest()
 class StringApplicationTests {
+	MyController myController;
+
+	@BeforeEach
+	void setUp(){
+		myController=new MyController();
+	}
 
 	@Test
-	void contextLoads() {
+	public void testEmptyString() {
+		assertEquals(0, myController.add(""));
 	}
 
 }
