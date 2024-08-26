@@ -34,4 +34,9 @@ class StringApplicationTests {
 	public void testNewLines() {
 		assertEquals(6, calculateString.add("1\n2,3"));
 	}
+
+	@Test
+	public void testCustomDelimiter() {
+		assertEquals(6, calculateString.add("//;\n1;2;3"));
+	}
 }
