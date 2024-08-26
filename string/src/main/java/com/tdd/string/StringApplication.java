@@ -8,6 +8,8 @@ public class StringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StringApplication.class, args);
+		CalculateString calculateString=new CalculateString();
+		System.out.println(calculateString.add("1,2"));
 	}
 
 }
