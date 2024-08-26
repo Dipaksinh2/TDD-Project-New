@@ -4,27 +4,29 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.tdd.string.Controller.MyController;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest()
 class StringApplicationTests {
-	MyController myController;
+	CalculateString calculateString;
 
 	@BeforeEach
 	void setUp(){
-		myController=new MyController();
+		calculateString=new CalculateString();
 	}
 
 	@Test
 	public void testEmptyString() {
-		assertEquals(0, myController.add(""));
+		assertEquals(0, calculateString.add(""));
 	}
 
 	@Test
 	public void testSingleNumber() {
-		assertEquals(1, myController.add("1"));
+		assertEquals(1, calculateString.add("1"));
+	}
+
+	@Test
+	public void testTwoNumbers() {
+		assertEquals(6, calculateString.add("1,5"));
 	}
 }
