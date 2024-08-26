@@ -2,11 +2,7 @@ package com.tdd.string;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.tdd.string.Controller.MyController;
 
@@ -27,4 +23,8 @@ class StringApplicationTests {
 		assertEquals(0, myController.add(""));
 	}
 
+	@Test
+	public void testSingleNumber() {
+		assertEquals(1, myController.add("1"));
+	}
 }
